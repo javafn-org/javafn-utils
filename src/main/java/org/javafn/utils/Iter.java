@@ -23,8 +23,8 @@ public class Iter {
 
 	/**
 	 * Turn an Iterator into a stream.  The code to do this is just painful enough that it warrants a specialized method.
-	 * @implNote An iterator is inherently one-shot, so this function consumes the iterator; it should not be used
-	 * once the returned stream is consumed.
+	 * <p>An iterator is inherently one-shot, so this function consumes the iterator; it should not be used
+	 * once the returned stream is consumed.</p>
 	 * @param iter the iterator to turn into a stream
 	 * @param <T> the type of the iterator
 	 * @return a Stream of the elements in this iterator

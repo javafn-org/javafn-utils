@@ -10,6 +10,11 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Utilities for manipulating collections without modifying the original.  All the methods in this class
+ * return (immutable) copies.  They are implemented using standard mutable copies because this is more efficient,
+ * but from an API perspective, this class enables fully immutable data structures.
+ */
 public class Data {
 
 	/**
@@ -91,5 +96,5 @@ public class Data {
 		return Map.copyOf(mut);
 	}
 
-	private Data() { throw new AssertionError("This is a static class and should not be instantiated"); }
+	private Data() { throw new IllegalStateException("This is a static class and should not be instantiated"); }
 }

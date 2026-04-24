@@ -38,7 +38,8 @@ public class Data {
 	public static <T> List<T> append(@Nonnull final List<T> src, @Nonnull final List<T> toAppend) {
 		Objects.requireNonNull(src);
 		Objects.requireNonNull(toAppend);
-		final List<T> mut = new ArrayList<>(src);
+		final List<T> mut = new ArrayList<>(src.size() + toAppend.size());
+		mut.addAll(src);
 		mut.addAll(toAppend);
 		return List.copyOf(mut);
 	}
@@ -64,7 +65,8 @@ public class Data {
 	public static <T> Set<T> append(@Nonnull final Set<T> src, @Nonnull final Set<T> toAppend) {
 		Objects.requireNonNull(src);
 		Objects.requireNonNull(toAppend);
-		final Set<T> mut = new HashSet<>(src);
+		final Set<T> mut = new HashSet<>(src.size() + toAppend.size());
+		mut.addAll(src);
 		mut.addAll(toAppend);
 		return Set.copyOf(mut);
 	}
@@ -91,7 +93,8 @@ public class Data {
 	public static <K, V> Map<K, V> append(@Nonnull final Map<K, V> src, @Nonnull final Map<K, V> toAppend) {
 		Objects.requireNonNull(src);
 		Objects.requireNonNull(toAppend);
-		final Map<K, V> mut = new HashMap<>(src);
+		final Map<K, V> mut = new HashMap<>(src.size() + toAppend.size());
+		mut.putAll(src);
 		mut.putAll(toAppend);
 		return Map.copyOf(mut);
 	}

@@ -30,13 +30,13 @@ centralPortal {
 	password = System.getenv("OSSRH_SONATYPE_PASSWORD")
 
 	pom {
-		name = 'JavaFn Tuples'
-		description = 'Pair, Trio, and Quad tuples that work well with streams.'
-		url = 'https://github.com/javafn-org/javafn-tuples'
+		name = 'JavaFn Utils'
+		description = 'Utility functions'
+		url = 'https://github.com/javafn-org/javafn-utils'
 		scm {
-			connection = 'scm:git:git://github.com:javafn-org/javafn-tuples.git'
-			developerConnection = 'scm:git:ssh://git@github.com:javafn-org/javafn-tuples.git'
-			url = 'https://github.com/javafn-org/javafn-tuples'
+			connection = 'scm:git:git://github.com:javafn-org/javafn-utils.git'
+			developerConnection = 'scm:git:ssh://git@github.com:javafn-org/javafn-utils.git'
+			url = 'https://github.com/javafn-org/javafn-utils'
 		}
 		licenses {
 			license {

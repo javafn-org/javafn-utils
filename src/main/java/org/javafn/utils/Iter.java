@@ -46,5 +46,5 @@ public class Iter {
 		return StreamSupport.stream(Objects.requireNonNull(iter).spliterator(), true);
 	}
 
-	private Iter() { throw new IllegalStateException("This is a static class and should never be instantiated"); }
+	private Iter() { Expect.staticConstructorNotCalled(this.getClass()); }
 }

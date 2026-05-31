@@ -1,6 +1,7 @@
 package org.javafn.utils;
 
-import jakarta.annotation.Nonnull;
+
+import edu.umd.cs.findbugs.annotations.NonNull;
 
 import java.util.Iterator;
 import java.util.Objects;
@@ -17,7 +18,7 @@ public class Iter {
 	 * @param <T> the type of the iterable
 	 * @return a Stream of the elements in this iterable
 	 */
-	public static <T> Stream<T> toStream(@Nonnull final Iterable<T> iter) {
+	public static <T> Stream<T> toStream(@NonNull final Iterable<T> iter) {
 		return StreamSupport.stream(Objects.requireNonNull(iter).spliterator(), false);
 	}
 
@@ -29,7 +30,7 @@ public class Iter {
 	 * @param <T> the type of the iterator
 	 * @return a Stream of the elements in this iterator
 	 */
-	public static <T> Stream<T> toStream(@Nonnull final Iterator<T> iter) {
+	public static <T> Stream<T> toStream(@NonNull final Iterator<T> iter) {
 		return StreamSupport.stream(Spliterators.spliteratorUnknownSize(
 				Objects.requireNonNull(iter),
 				Spliterator.ORDERED),
@@ -42,7 +43,7 @@ public class Iter {
 	 * @param <T> the type of the iterable
 	 * @return a Stream of the elements in this iterable
 	 */
-	public static <T> Stream<T> toParStream(@Nonnull final Iterable<T> iter) {
+	public static <T> Stream<T> toParStream(@NonNull final Iterable<T> iter) {
 		return StreamSupport.stream(Objects.requireNonNull(iter).spliterator(), true);
 	}
 

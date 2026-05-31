@@ -1,6 +1,7 @@
 package org.javafn.utils;
 
-import jakarta.annotation.Nonnull;
+
+import edu.umd.cs.findbugs.annotations.NonNull;
 
 import java.util.Objects;
 
@@ -23,7 +24,7 @@ public final class Haltable<C> {
 	private C component;
 	private Runnable haltFn;
 
-	public Haltable(@Nonnull final C _component, @Nonnull final Runnable _haltFn) {
+	public Haltable(@NonNull final C _component, @NonNull final Runnable _haltFn) {
 		component = Objects.requireNonNull(_component);
 		haltFn = Objects.requireNonNull(_haltFn);
 	}

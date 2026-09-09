@@ -34,6 +34,8 @@ public final class RestartingThread extends Thread implements UncaughtExceptionH
 		start();
 	}
 
+	@Override public void run() {super.run();}
+
 	@Override public void uncaughtException(final Thread t, final Throwable e) {
 		if (ctx.isRunning()) {
 			ctx.onThreadInstanceChanged(new RestartingThread(ctx), e);

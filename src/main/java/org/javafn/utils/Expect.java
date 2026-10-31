@@ -88,15 +88,15 @@ public final class Expect {
     /**
      * Throw an IllegalStateException if this constructor is called; to be used in the private
      * constructor of a class containing only static components.
-     * @implNote always throws
+     * <p><strong>NOTE:</strong> always throws</p>
      */
     public static void staticConstructorNotCalled() { staticConstructorNotCalled(null);}
 
     /**
      * Throw an IllegalStateException if this constructor is called; to be used in the private
      * constructor of a class containing only static components.
+     * <p><strong>NOTE:</strong> always throws</p>
      * @param clazz the {@link Class} object that should not be constructed
-     * @implNote always throws
      */
     public static void staticConstructorNotCalled(final Class<?> clazz) {
         throw unmet("%s static class cannot be instantiated"

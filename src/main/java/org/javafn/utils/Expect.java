@@ -86,6 +86,15 @@ public final class Expect {
     }
 
     /**
+     * Prior to Java21, the compiler cannot ensure exhaustive cases for sealed types
+     * (without the preview feature enabled).  Throw the result of this method in a default case
+     * or an else statement.
+     */
+    public static <T> IllegalStateException exhaustiveMatchOnSealedType(final Class<T> t) {
+        return new IllegalStateException("Expected type " + t.getCanonicalName() + " is sealed class exhaustive match was performed.");
+    }
+
+    /**
      * Throw an IllegalStateException if this constructor is called; to be used in the private
      * constructor of a class containing only static components.
      * <p><strong>NOTE:</strong> always throws</p>
